@@ -1,6 +1,6 @@
 package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.security;
 
-import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.model.Person;
+import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model.PersonSecurity;
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.repositories.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,7 +23,7 @@ public class PersonDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) {
-        Optional<Person> person = peopleRepository.findByUsername(username);
+        Optional<PersonSecurity> person = peopleRepository.findByUsername(username);
 
         if (person.isEmpty()) {
             throw new UsernameNotFoundException("Repository has not found user with username: " + username);
@@ -31,4 +31,5 @@ public class PersonDetailsService implements UserDetailsService {
 
         return new PersonDetails(person.get());
     }
+
 }

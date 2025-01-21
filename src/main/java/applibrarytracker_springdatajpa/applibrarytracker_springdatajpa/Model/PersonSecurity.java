@@ -1,4 +1,4 @@
-package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.model;
+package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "person_security")
-public class Person {
+public class PersonSecurity {
 
     @Id
     @Column(name = "id")
@@ -26,7 +26,10 @@ public class Person {
     @Column(name = "password")
     private String password;
 
-    public Person() {
+    @Column(name = "role")
+    private String role;
+
+    public PersonSecurity() {
 
     }
 
@@ -60,5 +63,13 @@ public class Person {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

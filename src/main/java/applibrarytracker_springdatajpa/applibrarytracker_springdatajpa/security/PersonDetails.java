@@ -1,6 +1,6 @@
 package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.security;
 
-import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.model.Person;
+import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model.PersonSecurity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -10,10 +10,10 @@ import java.util.Collections;
 
 public class PersonDetails implements UserDetails {
 
-    private final Person person;
+    private final PersonSecurity personSecurity;
 
-    public PersonDetails(Person person) {
-        this.person = person;
+    public PersonDetails(PersonSecurity personSecurity) {
+        this.personSecurity = personSecurity;
     }
 
     @Override
@@ -23,12 +23,12 @@ public class PersonDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return person.getPassword();
+        return personSecurity.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return person.getUsername();
+        return personSecurity.getUsername();
     }
 
     @Override
