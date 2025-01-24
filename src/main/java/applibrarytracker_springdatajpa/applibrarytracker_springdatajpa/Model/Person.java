@@ -1,14 +1,13 @@
 package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 import java.util.List;
 
-
+@Getter
+@Setter
 @Entity
 @Table(name = "person")
 public class Person {
@@ -27,35 +26,5 @@ public class Person {
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = false)
     private List<Book> books;
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public int getBirthYear() {
-        return birthYear;
-    }
-
-    public void setBirthYear(int birthYear) {
-        this.birthYear = birthYear;
-    }
-
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
 }

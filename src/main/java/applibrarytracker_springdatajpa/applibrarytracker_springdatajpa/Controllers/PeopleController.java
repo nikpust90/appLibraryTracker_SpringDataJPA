@@ -5,7 +5,7 @@ package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Controll
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model.Person;
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.service.PersonService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,14 +15,10 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = "/people", produces = "text/html; charset=UTF-8")
+@RequiredArgsConstructor
 public class PeopleController {
 
     private final PersonService personService;
-
-    @Autowired
-    public PeopleController(PersonService personService) {
-        this.personService = personService;
-    }
 
     // Получение всех людей GET
     @GetMapping

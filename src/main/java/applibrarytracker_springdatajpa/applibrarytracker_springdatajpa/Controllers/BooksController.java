@@ -5,7 +5,7 @@ import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model.Per
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.service.BookService;
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.service.PersonService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,15 +15,10 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/books")
+@RequiredArgsConstructor
 public class BooksController {
     private final BookService bookService;
     private final PersonService personService;
-
-    @Autowired
-    public BooksController(BookService bookService, PersonService personService) {
-        this.bookService = bookService;
-        this.personService = personService;
-    }
 
     // Получить список книг
     @GetMapping

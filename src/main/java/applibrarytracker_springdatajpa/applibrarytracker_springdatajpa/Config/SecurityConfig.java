@@ -21,17 +21,12 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableMethodSecurity
 public class SecurityConfig  {
 
-    private final PersonDetailsService personDetailsService;
 
-    @Autowired
-    public SecurityConfig(PersonDetailsService personDetailsService) {
-        this.personDetailsService = personDetailsService;
-    }
 
 
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http, PersonDetailsService personDetailsService) throws Exception {
         http
                 .authorizeHttpRequests((authz) -> authz
                         .requestMatchers("/auth/login", "/auth/registration", "/auth/logout", "/error")
