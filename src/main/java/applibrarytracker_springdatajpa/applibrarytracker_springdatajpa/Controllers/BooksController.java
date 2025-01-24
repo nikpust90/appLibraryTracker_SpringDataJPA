@@ -6,6 +6,7 @@ import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.service.B
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.service.PersonService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,6 +22,7 @@ public class BooksController {
     private final PersonService personService;
 
     // Получить список книг
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     @GetMapping
     public String getAllBooks(Model model) {
         try {
@@ -34,6 +36,7 @@ public class BooksController {
     }
 
     // Создание книги GET
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/new")
     public String giveToUserPageToCreateNewBook(Model model) {
         model.addAttribute("keyOfNewBook", new Book());
@@ -41,6 +44,7 @@ public class BooksController {
     }
 
     // Создание книги POST
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public String createBook(@ModelAttribute("keyOfNewBook") @Valid Book book, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
@@ -55,6 +59,7 @@ public class BooksController {
     }
 
     // Получение книги по ID GET
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
     public String getBookById(@PathVariable("id") Long id, Model model) {
         Book bookById = bookService.getBookById(id);
@@ -68,6 +73,7 @@ public class BooksController {
     }
 
     // Редактирование книги по ID GET
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/edit/{id}")
     public String editBook(@PathVariable("id") Long id, Model model) {
         Book bookToBeEdited = bookService.getBookById(id);
@@ -80,6 +86,7 @@ public class BooksController {
     }
 
     // Редактирование книги по ID POST
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/edit/{id}")
     public String editBook(@PathVariable("id") Long id,
                            @ModelAttribute("keyOfBookToBeEdited") @Valid Book bookFromForm,
@@ -93,6 +100,7 @@ public class BooksController {
     }
 
     // Удаление книги по ID DELETE
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/delete/{id}")
     public String deleteBook(@PathVariable("id") Long id) {
         bookService.deleteBook(id);
@@ -100,6 +108,7 @@ public class BooksController {
     }
 
     // Назначение книги читателю
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/assign/{id}")
     public String assignBook(@PathVariable("id") Long bookId, @RequestParam("personId") Long personId) {
         Person person = personService.getPersonById(personId);
@@ -110,6 +119,7 @@ public class BooksController {
     }
 
     // Удаляем книгу у читателя
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/loose/{id}")
     public String looseBook(@PathVariable("id") Long bookId) {
         bookService.removeBookFromPerson(bookId);
