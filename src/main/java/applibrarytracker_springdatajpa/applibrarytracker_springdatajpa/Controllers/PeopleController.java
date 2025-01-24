@@ -6,6 +6,7 @@ import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model.Per
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.service.PersonService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -34,6 +35,7 @@ public class PeopleController {
     }
 
     // Добавление нового человека GET
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/create")
     public String giveToUserPageToCreateNewPerson(Model model) {
         model.addAttribute("keyOfNewPerson", new Person());
@@ -41,6 +43,7 @@ public class PeopleController {
     }
 
     // Добавление нового человека POST
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public String createPerson(@ModelAttribute("keyOfNewPerson") @Valid Person person, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
@@ -55,6 +58,7 @@ public class PeopleController {
     }
 
     // Получение человека по ID GET
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
     public String getPersonById(@PathVariable("id") Long id, Model model) {
         Person personById = personService.getPersonById(id);
@@ -68,6 +72,7 @@ public class PeopleController {
     }
 
     // Редактирование человека по ID GET
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/edit/{id}")
     public String editPerson(@PathVariable("id") Long id, Model model) {
         Person personToBeEdited = personService.getPersonById(id);
@@ -80,6 +85,7 @@ public class PeopleController {
     }
 
     // Редактирование человека по ID POST
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/edit/{id}")
     public String editPerson(@PathVariable("id") Long id,
                              @ModelAttribute("keyOfPersonToBeEdited") @Valid Person personFromForm,
@@ -93,6 +99,7 @@ public class PeopleController {
     }
 
     // Удаление человека по ID DELETE
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/delete/{id}")
     public String deletePerson(@PathVariable("id") Long id) {
         personService.deletePerson(id);
