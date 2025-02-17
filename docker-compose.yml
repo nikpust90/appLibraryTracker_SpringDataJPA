@@ -7,7 +7,7 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://95.31.250.137:5432/projekt2
       SPRING_DATASOURCE_USERNAME: projekt2_user
-      SPRING_DATASOURCE_PASSWORD: "8$PpT!wq2Z#iKmQxR7^VjL0l"
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
       SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
       SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
       SPRING_JPA_HIBERNATE_DDL_AUTO: update  # или none, если не хочешь изменений в схеме
