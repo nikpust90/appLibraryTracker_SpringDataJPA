@@ -5,8 +5,8 @@ services:
     build: .  # Указание, что контейнер для этого сервиса нужно собирать из текущей директории (где находится Dockerfile)
     container_name: library_app  # Название контейнера для приложения
     environment:  # Задание переменных окружения для контейнера
-      SPRING_DATASOURCE_URL: jdbc:postgresql://95.31.250.137:5432/projekt2  # URL для подключения к внешней базе данных PostgreSQL
-      SPRING_DATASOURCE_USERNAME: projekt2_user  # Имя пользователя для подключения к базе данных
-      SPRING_DATASOURCE_PASSWORD: 8$PpT!wq2Z#iKmQxR7^VjL0l  # Пароль пользователя для подключения к базе данных
+      SPRING_DATASOURCE_URL: jdbc:postgresql://95.31.250.137:5432/projekt2
+      SPRING_DATASOURCE_USERNAME: projekt2_user
+      SPRING_DATASOURCE_PASSWORD: 8$PpT!wq2Z#iKmQxR7^VjL0l
     ports:  # Проброс портов для приложения
       - "8080:8080"  # Приложение будет доступно на порту 8080
