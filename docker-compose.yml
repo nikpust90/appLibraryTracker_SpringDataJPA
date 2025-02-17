@@ -1,12 +1,15 @@
 version: '3.8'
 
 services:
-  app:  # Описание сервиса для приложения
-    build: .  # Указание, что контейнер для этого сервиса нужно собирать из текущей директории (где находится Dockerfile)
-    container_name: library_app  # Название контейнера для приложения
-    environment:  # Задание переменных окружения для контейнера
+  app:
+    build: .
+    container_name: library_app
+    environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://95.31.250.137:5432/projekt2
       SPRING_DATASOURCE_USERNAME: projekt2_user
       SPRING_DATASOURCE_PASSWORD: 8$PpT!wq2Z#iKmQxR7^VjL0l
-    ports:  # Проброс портов для приложения
-      - "8081:8080"  # Приложение будет доступно на порту 8080
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update  # или none, если не хочешь изменений в схеме
+    ports:
+      - "8081:8080"
