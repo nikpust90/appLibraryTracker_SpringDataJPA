@@ -9,4 +9,4 @@ services:
       SPRING_DATASOURCE_USERNAME: projekt2_user
       SPRING_DATASOURCE_PASSWORD: 8$PpT!wq2Z#iKmQxR7^VjL0l
     ports:  # Проброс портов для приложения
-      - "8080:8080"  # Приложение будет доступно на порту 8080
+      - "8081:8080"  # Приложение будет доступно на порту 8080
