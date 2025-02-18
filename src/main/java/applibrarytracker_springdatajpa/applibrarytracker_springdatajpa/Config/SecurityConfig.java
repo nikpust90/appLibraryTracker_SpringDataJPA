@@ -28,10 +28,14 @@ public class SecurityConfig  {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http, PersonDetailsService personDetailsService) throws Exception {
         http
-                .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers("/auth/login", "/auth/registration", "/auth/logout", "/error")
-                        .permitAll()
-                        .anyRequest().authenticated())
+            .authorizeHttpRequests((authz) -> authz
+                    .requestMatchers("/auth/login", "/auth/registration", "/auth/logout", "/error").permitAll()
+                    .requestMatchers("/books").hasAnyRole("USER", "ADMIN") // Для простоты только USER и ADMIN
+                    .requestMatchers("/books/**").hasRole("ADMIN")
+                    .requestMatchers("/people").hasAnyRole("USER", "ADMIN")
+                    .requestMatchers("/people/**").hasRole("ADMIN")
+                    .requestMatchers("/auth/admin/**").hasRole("ADMIN")
+                    .anyRequest().authenticated())
                 .userDetailsService(personDetailsService)
                 .formLogin().loginPage("/auth/login") // Используем форму для входа
                 .loginProcessingUrl("/process_login") // Используем для обработки формы входа

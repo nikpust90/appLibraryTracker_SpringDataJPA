@@ -43,12 +43,25 @@ public class AuthController {
         return "redirect:/auth/login";
     }
 
+
     @GetMapping("/admin")
-    public String getAdminPage() {
-
-        peopleService.doAdminSomething();
-
+    public String getAdminPage(Model model) {
+        model.addAttribute("users", peopleService.getAllUsers()); // Передаем список пользователей для отображения
         return "auth/admin";
+    }
+
+    @PostMapping("/admin/assign-role")
+    public String assignRole(@RequestParam("username") String username,
+                             @RequestParam("role") String role,
+                             Model model) {
+        try {
+            peopleService.changeUserRole(username, role); // Изменяем роль пользователя
+            model.addAttribute("successMessage", "Роль успешно изменена!");
+        } catch (Exception e) {
+            model.addAttribute("errorMessage", "Ошибка: " + e.getMessage());
+        }
+        model.addAttribute("users", peopleService.getAllUsers());
+        return "auth/admin"; // Возвращаемся на страницу администратора
     }
 
 }

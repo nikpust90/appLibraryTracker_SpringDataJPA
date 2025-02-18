@@ -2,7 +2,7 @@ package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.security
 
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model.PersonSecurity;
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.repositories.PeopleRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -12,14 +12,10 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class PersonDetailsService implements UserDetailsService {
 
     private final PeopleRepository peopleRepository;
-
-    @Autowired
-    public PersonDetailsService(PeopleRepository peopleRepository) {
-        this.peopleRepository = peopleRepository;
-    }
 
     @Override
     public UserDetails loadUserByUsername(String username) {
