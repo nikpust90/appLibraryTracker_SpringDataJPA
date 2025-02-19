@@ -2,6 +2,7 @@ package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Controll
 
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model.Book;
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model.Person;
+import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.kafka.producer.KafkaProducerService;
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.service.BookService;
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.service.PersonService;
 import jakarta.validation.Valid;
@@ -20,6 +21,8 @@ import java.util.List;
 public class BooksController {
     private final BookService bookService;
     private final PersonService personService;
+    private final KafkaProducerService kafkaProducerService;
+
 
     // Получить список книг
     @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
@@ -52,6 +55,7 @@ public class BooksController {
         }
         try {
             bookService.saveBook(book);
+            kafkaProducerService.sendNotification("79614641553@mail.ru", "Добавлена новая книга: " + book.getTitle());
             return "redirect:/books";
         } catch (Exception e) {
             return "books/error-view";
@@ -104,6 +108,7 @@ public class BooksController {
     @PostMapping("/delete/{id}")
     public String deleteBook(@PathVariable("id") Long id) {
         bookService.deleteBook(id);
+
         return "redirect:/books";
     }
 

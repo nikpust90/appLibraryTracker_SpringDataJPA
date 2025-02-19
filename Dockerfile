@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/appLibraryTracker_SpringDataJPA-0.0.1-SNAPSHOT.jar /app/appLibraryTracker_SpringDataJPA-0.0.1-SNAPSHOT.jar
 
 # Открываем порт, на котором будет работать приложение
-EXPOSE 8080
+EXPOSE 8081
 
 # Команда для запуска приложения
 ENTRYPOINT ["java", "-jar", "appLibraryTracker_SpringDataJPA-0.0.1-SNAPSHOT.jar"]
