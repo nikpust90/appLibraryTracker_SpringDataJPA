@@ -1,14 +1,30 @@
 # Используем официальный образ OpenJDK 17
-FROM openjdk:17-jdk-slim
+FROM openjdk:17-jdk-slim as builder
 
-# Устанавливаем рабочую директорию внутри контейнера
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем JAR файл приложения в контейнер
-COPY target/appLibraryTracker_SpringDataJPA-0.0.1-SNAPSHOT.jar /app/appLibraryTracker_SpringDataJPA-0.0.1-SNAPSHOT.jar
+# Используем переменную для имени JAR-файла
+ARG JAR_FILE=target/appLibraryTracker_SpringDataJPA-0.0.1-SNAPSHOT.jar
 
-# Открываем порт, на котором будет работать приложение
+# Копируем JAR-файл в контейнер
+COPY ${JAR_FILE} app.jar
+
+# Используем минимальный базовый образ
+FROM openjdk:17-jdk-slim
+
+# Создаем пользователя без root-прав
+RUN useradd -m appuser
+USER appuser
+
+# Устанавливаем рабочую директорию
+WORKDIR /app
+
+# Копируем JAR-файл из предыдущего этапа
+COPY --from=builder /app/app.jar app.jar
+
+# Открываем порт
 EXPOSE 8081
 
 # Команда для запуска приложения
-ENTRYPOINT ["java", "-jar", "appLibraryTracker_SpringDataJPA-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]

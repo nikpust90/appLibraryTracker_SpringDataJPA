@@ -1,5 +1,6 @@
 package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.kafka.consumer;
 
+import jakarta.annotation.PostConstruct;
 import org.apache.kafka.clients.consumer.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -10,6 +11,11 @@ import org.springframework.stereotype.Service;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
+
+/**
+ * Сервис, который слушает Kafka-топик и отправляет email-уведомления пользователям.
+ */
+
 
 /**
  * Сервис, который слушает Kafka-топик и отправляет email-уведомления пользователям.
@@ -25,16 +31,17 @@ public class NotificationConsumerService {
 
         // Настройки Kafka-консьюмера
         Properties props = new Properties();
-        props.put("bootstrap.servers", "localhost:9092"); // Адрес брокера Kafka
-        props.put("group.id", "notification-group"); // Группа консьюмеров
+        props.put("bootstrap.servers", "kafka:9092"); // Используем контейнерное имя
+        props.put("group.id", "notification-group");
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 
-        // Создаем консьюмера Kafka
         this.consumer = new KafkaConsumer<>(props);
-        consumer.subscribe(Collections.singletonList("user-notifications")); // Подписка на топик
+        consumer.subscribe(Collections.singletonList("user-notifications"));
+    }
 
-        // Запускаем в отдельном потоке
+    @PostConstruct
+    public void startConsumer() {
         new Thread(this::consumeMessages).start();
     }
 
@@ -58,11 +65,17 @@ public class NotificationConsumerService {
      * @param text Текст письма
      */
     private void sendEmail(String to, String subject, String text) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(to);
-        message.setSubject(subject);
-        message.setText(text);
-        mailSender.send(message);
-        System.out.println("Отправлено email-уведомление на " + to);
+        try {
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setTo(to);
+            message.setSubject(subject);
+            message.setText(text);
+            mailSender.send(message);
+            System.out.println("Отправлено email-уведомление на " + to);
+        } catch (Exception e) {
+            System.err.println("Ошибка при отправке email: " + e.getMessage());
+        }
     }
 }
+
+

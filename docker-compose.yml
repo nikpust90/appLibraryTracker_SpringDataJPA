@@ -1,96 +1,54 @@
 version: '3.8'
 
 services:
+  app:
+    build: .
+    container_name: app_library_tracker
+    restart: always
+    environment:
+      SPRING_APPLICATION_NAME: appLibraryTracker_SpringDataJPA
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_MAIL_USERNAME: ${SPRING_MAIL_USERNAME}
+      SPRING_MAIL_PASSWORD: ${SPRING_MAIL_PASSWORD}
+    ports:
+      - "8081:8081"
+    depends_on:
+      kafka:
+        condition: service_healthy
+
+
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper
+    restart: always
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
-    ports:
-      - "22181:2181"
-    networks:
-      - kafka_network
+    healthcheck:
+      test: ["CMD", "nc", "-z", "zookeeper", "2181"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
 
   kafka:
     image: confluentinc/cp-kafka:latest
+    container_name: kafka
+    restart: always
     depends_on:
       - zookeeper
-    ports:
-      - "29092:29092"
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
-      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-    networks:
-      - kafka_network
-
-  kafka-ui:
-    image: provectuslabs/kafka-ui:latest
-    depends_on:
-      - kafka
     ports:
-      - "8090:8080"
-    environment:
-      KAFKA_CLUSTERS_0_NAME: local
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
-      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
-    networks:
-      - kafka_network
-
-  producer:
-    build:
-      context: ../order-producer
-    ports:
-      - "9003:9003"
-    depends_on:
-      - kafka
-    environment:
-      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
-    networks:
-      - kafka_network
-
-  consumer:
-    build:
-      context: ../order-consumer
-    ports:
-      - "9002:9002"
-    depends_on:
-      - kafka
-    environment:
-      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
-    networks:
-      - kafka_network
-
-  library_app:
-    build: .
-    container_name: library_app
-    depends_on:
-      - kafka
-    env_file:
-      - .env
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://95.31.250.137:5432/projekt2
-      SPRING_DATASOURCE_USERNAME: projekt2_user
-      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
-      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
-      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-    ports:
-      - "8081:8081"
-      - "5006:5006" # Подключение отладчика
-    command:
-      - "java"
-      - "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5006"
-      - "-jar"
-      - "appLibraryTracker_SpringDataJPA-0.0.1-SNAPSHOT.jar"
-    networks:
-      - kafka_network
-
-networks:
-  kafka_network:
-    driver: bridge
-
+      - "9092:9092"
+    healthcheck:
+      test: ["CMD", "kafka-topics", "--list", "--bootstrap-server", "kafka:9092"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
