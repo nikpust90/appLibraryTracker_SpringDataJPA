@@ -1,6 +1,7 @@
 package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.kafka.consumer;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.apache.kafka.clients.consumer.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -12,9 +13,7 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
-/**
- * Сервис, который слушает Kafka-топик и отправляет email-уведомления пользователям.
- */
+
 
 
 /**
@@ -24,6 +23,7 @@ import java.util.Properties;
 public class NotificationConsumerService {
     private final JavaMailSender mailSender;
     private final KafkaConsumer<String, String> consumer;
+    private volatile boolean running = true; // Флаг для завершения работы
 
     @Autowired
     public NotificationConsumerService(JavaMailSender mailSender) {
@@ -35,6 +35,7 @@ public class NotificationConsumerService {
         props.put("group.id", "notification-group");
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        props.put("auto.offset.reset", "earliest"); // Читаем сообщения с начала, если новый клиент
 
         this.consumer = new KafkaConsumer<>(props);
         consumer.subscribe(Collections.singletonList("user-notifications"));
@@ -49,24 +50,33 @@ public class NotificationConsumerService {
      * Слушает Kafka и обрабатывает полученные сообщения
      */
     private void consumeMessages() {
-        while (true) {
-            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
-            for (ConsumerRecord<String, String> record : records) {
-                System.out.println("Получено сообщение: " + record.value() + " для " + record.key());
-                sendEmail(record.key(), "Новое уведомление", record.value());
+        try {
+            while (running) {
+                ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
+                for (ConsumerRecord<String, String> record : records) {
+                    System.out.println("Получено сообщение: " + record.value() + " для " + record.key());
+                    sendEmail(record.key(), "Новое уведомление", record.value());
+                }
             }
+        } catch (Exception e) {
+            System.err.println("Ошибка при обработке Kafka-сообщений: " + e.getMessage());
+        } finally {
+            consumer.close(); // Закрываем Kafka-консьюмера при завершении
         }
+    }
+
+    @PreDestroy
+    public void stopConsumer() {
+        running = false; // Останавливаем цикл
     }
 
     /**
      * Отправляет email-уведомление пользователю
-     * @param to Email получателя
-     * @param subject Тема письма
-     * @param text Текст письма
      */
     private void sendEmail(String to, String subject, String text) {
         try {
             SimpleMailMessage message = new SimpleMailMessage();
+            message.setFrom("nikolai.first21@yandex.ru"); // Указать явно!
             message.setTo(to);
             message.setSubject(subject);
             message.setText(text);
@@ -77,5 +87,6 @@ public class NotificationConsumerService {
         }
     }
 }
+
 
 

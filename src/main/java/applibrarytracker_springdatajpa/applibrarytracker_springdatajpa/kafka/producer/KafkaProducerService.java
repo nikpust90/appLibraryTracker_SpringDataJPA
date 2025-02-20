@@ -22,6 +22,8 @@ public class KafkaProducerService {
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("acks", "all"); // Гарантированная доставка
+        props.put("retries", 3); // Если ошибка - попробуем повторно
+        props.put("linger.ms", 5); // Минимальная задержка для отправки пакетов
 
         this.producer = new KafkaProducer<>(props);
     }
@@ -39,16 +41,17 @@ public class KafkaProducerService {
                 System.out.println("Уведомление отправлено: " + message + " для " + email);
             } else {
                 System.err.println("Ошибка отправки Kafka-сообщения: " + exception.getMessage());
+                throw new RuntimeException("Ошибка отправки Kafka: ", exception);
             }
         });
+
+        producer.flush(); // Принудительно отправляем сообщения
     }
 
-    /**
-     * Закрытие Kafka-продюсера при завершении работы приложения.
-     */
     @PreDestroy
     public void close() {
         producer.close();
     }
 }
+
 
