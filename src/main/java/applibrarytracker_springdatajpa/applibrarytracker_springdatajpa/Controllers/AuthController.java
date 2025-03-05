@@ -17,7 +17,7 @@ public class AuthController {
 
     private final PersonValidator personValidator;
     private final PeopleService peopleService;
-    private final RabbitMQProducer rabbitMQProducer;
+
 
     @GetMapping("/login")
     public String login() {
