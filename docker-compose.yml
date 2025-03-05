@@ -7,7 +7,7 @@ services:
     restart: always
     environment:
       SPRING_APPLICATION_NAME: appLibraryTracker_SpringDataJPA
-      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/projekt2
       SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
       SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
@@ -16,8 +16,21 @@ services:
     ports:
       - "8081:8081"
     depends_on:
-      kafka:
-        condition: service_healthy
+      - db
+      - kafka
+
+  db:
+    image: postgres:15
+    container_name: postgres_db_library
+    restart: always
+    environment:
+      POSTGRES_DB: projekt2
+      POSTGRES_USER: ${SPRING_DATASOURCE_USERNAME}
+      POSTGRES_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
 
   zookeeper:
@@ -52,3 +65,7 @@ services:
       retries: 5
       start_period: 10s
       timeout: 5s
+
+# Добавьте определение volume в конце файла
+volumes:
+  postgres_data:
