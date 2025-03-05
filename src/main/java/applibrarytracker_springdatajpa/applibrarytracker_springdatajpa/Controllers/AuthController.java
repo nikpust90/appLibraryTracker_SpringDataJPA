@@ -1,6 +1,7 @@
 package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Controllers;
 
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model.PersonSecurity;
+import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.rabbitMQ.RabbitMQProducer;
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.service.PeopleService;
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.validation.PersonValidator;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,7 @@ public class AuthController {
 
     private final PersonValidator personValidator;
     private final PeopleService peopleService;
+    private final RabbitMQProducer rabbitMQProducer;
 
     @GetMapping("/login")
     public String login() {
@@ -27,6 +29,7 @@ public class AuthController {
         model.addAttribute("personSecurity", new PersonSecurity());
         return "auth/registration";
     }
+
 
     @PostMapping("/registration")
     public String register(@ModelAttribute("personSecurity") PersonSecurity personSecurity,

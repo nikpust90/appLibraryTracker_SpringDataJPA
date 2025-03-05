@@ -3,6 +3,8 @@ package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Controll
 
 
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model.Person;
+import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.rabbitMQ.RabbitMQConsumer;
+import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.rabbitMQ.RabbitMQProducer;
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.service.PersonService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -20,6 +23,8 @@ import java.util.List;
 public class PeopleController {
 
     private final PersonService personService;
+    private final RabbitMQProducer rabbitMQProducer;
+    private final RabbitMQConsumer rabbitMQConsumer;
 
     // Получение всех людей GET
     @GetMapping
@@ -27,6 +32,14 @@ public class PeopleController {
         try {
             List<Person> allPersons = personService.getAllPersons();
             model.addAttribute("keyAllPeoples", allPersons);
+
+            // Получаем последнее сообщение из RabbitMQ и передаем в модель
+
+            String lastMessage = rabbitMQConsumer.getLastMessage();
+            if (lastMessage != null) {
+                model.addAttribute("successMessage", lastMessage);
+            }
+
             return "people/view-with-all-people1";
         } catch (Exception e) {
             model.addAttribute("errorMessage", "Ошибка при загрузке данных");
@@ -45,12 +58,19 @@ public class PeopleController {
     // Добавление нового человека POST
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
-    public String createPerson(@ModelAttribute("keyOfNewPerson") @Valid Person person, BindingResult bindingResult) {
+    public String createPerson(@ModelAttribute("keyOfNewPerson") @Valid Person person, BindingResult bindingResult,  RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             return "people/view-to-create-new-person";
         }
         try {
+
             personService.savePerson(person);
+            // Отправляем сообщение в RabbitMQ
+            String message = "Добавлен новый человек: " + person.getFullName() + " (" + person.getBirthYear() + ")";
+            rabbitMQProducer.sendMessage(message);
+
+            // Добавляем сообщение в RedirectAttributes, чтобы оно появилось после редиректа
+            redirectAttributes.addFlashAttribute("successMessage", message);
             return "redirect:/people";
         } catch (Exception e) {
             return "people/error-view";

@@ -61,7 +61,10 @@
 
 </head>
 <body>
-
+<!-- Вывод успешного сообщения -->
+<div th:if="${successMessage}" style="color: green;">
+    <p th:text="${successMessage}"></p>
+</div>
 <!-- Цикл для отображения списка людей -->
 <div th:each="eachPerson : ${keyAllPeoples}">
     <!-- Ссылка с именем и годом рождения человека -->
