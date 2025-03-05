@@ -15,6 +15,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 
 @Controller
@@ -22,6 +25,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PeopleController {
 
+    private static final Logger logger = LoggerFactory.getLogger(PeopleController.class);
     private final PersonService personService;
     private final RabbitMQProducer rabbitMQProducer;
     private final RabbitMQConsumer rabbitMQConsumer;
@@ -34,15 +38,16 @@ public class PeopleController {
             model.addAttribute("keyAllPeoples", allPersons);
 
             // Получаем последнее сообщение из RabbitMQ и передаем в модель
-
             String lastMessage = rabbitMQConsumer.getLastMessage();
             if (lastMessage != null) {
                 model.addAttribute("successMessage", lastMessage);
+                logger.info("Последнее сообщение из RabbitMQ: {}", lastMessage); // Логируем сообщение из RabbitMQ
             }
 
             return "people/view-with-all-people1";
         } catch (Exception e) {
             model.addAttribute("errorMessage", "Ошибка при загрузке данных");
+            logger.error("Ошибка при получении людей: {}", e.getMessage(), e); // Логируем ошибку
             return "people/error-view";
         }
     }
@@ -51,6 +56,7 @@ public class PeopleController {
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/create")
     public String giveToUserPageToCreateNewPerson(Model model) {
+        logger.info("Открыта страница для создания нового человека");
         model.addAttribute("keyOfNewPerson", new Person());
         return "people/view-to-create-new-person";
     }
@@ -58,21 +64,25 @@ public class PeopleController {
     // Добавление нового человека POST
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
-    public String createPerson(@ModelAttribute("keyOfNewPerson") @Valid Person person, BindingResult bindingResult,  RedirectAttributes redirectAttributes) {
+    public String createPerson(@ModelAttribute("keyOfNewPerson") @Valid Person person, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
+            logger.warn("Ошибка валидации для нового человека: {}", person);
             return "people/view-to-create-new-person";
         }
         try {
-
             personService.savePerson(person);
             // Отправляем сообщение в RabbitMQ
             String message = "Добавлен новый человек: " + person.getFullName() + " (" + person.getBirthYear() + ")";
             rabbitMQProducer.sendMessage(message);
 
+            // Логируем успешное добавление
+            logger.info("Добавлен новый человек: {}", message);
+
             // Добавляем сообщение в RedirectAttributes, чтобы оно появилось после редиректа
             redirectAttributes.addFlashAttribute("successMessage", message);
             return "redirect:/people";
         } catch (Exception e) {
+            logger.error("Ошибка при добавлении нового человека: {}", e.getMessage(), e); // Логируем ошибку
             return "people/error-view";
         }
     }
