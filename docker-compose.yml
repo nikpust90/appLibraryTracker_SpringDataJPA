@@ -15,12 +15,21 @@ services:
       SPRING_RABBITMQ_PORT: 5672
       SPRING_MAIL_USERNAME: ${SPRING_MAIL_USERNAME}
       SPRING_MAIL_PASSWORD: ${SPRING_MAIL_PASSWORD}
+      # Параметры логирования
+      LOGGING_FILE_NAME: /app/logs/app.log
+      LOGGING_LEVEL_ROOT: INFO
+      LOGGING_PATTERN_CONSOLE: "%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"
     ports:
       - "8081:8081"
+    volumes:
+      - ./logs:/app/logs
     depends_on:
       - db
       - kafka
       - rabbitmq
+    user: appuser
+    working_dir: /app
+    command: java -jar app.jar
 
   db:
     image: postgres:15
@@ -87,4 +96,5 @@ services:
 
 volumes:
   postgres_data:
+  logs:
 

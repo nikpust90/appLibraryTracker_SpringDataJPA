@@ -62,7 +62,7 @@ public class PeopleController {
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/create")
     public String giveToUserPageToCreateNewPerson(Model model) {
-        Logger log = LoggerFactory.getLogger(PeopleController.class);
+
         log.info("Открыта страница для создания нового человека");
         model.addAttribute("keyOfNewPerson", new Person());
         return "people/view-to-create-new-person";
@@ -72,7 +72,7 @@ public class PeopleController {
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public String createPerson(@ModelAttribute("keyOfNewPerson") @Valid Person person, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-        Logger log = LoggerFactory.getLogger(PeopleController.class);
+
         if (bindingResult.hasErrors()) {
             log.warn("Ошибка валидации для нового человека: {}", person);
             return "people/view-to-create-new-person";

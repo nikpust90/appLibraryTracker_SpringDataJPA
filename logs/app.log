@@ -1,0 +1,1152 @@
+2025-03-06T10:20:05.291Z  INFO 1 --- [main] a.a.Application                          : Starting Application v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by appuser in /app)
+2025-03-06T10:20:05.297Z  INFO 1 --- [main] a.a.Application                          : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T10:20:06.070Z  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06T10:20:06.126Z  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+2025-03-06T10:20:06.771Z  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2025-03-06T10:20:06.787Z  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T10:20:06.788Z  INFO 1 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-03-06T10:20:06.872Z  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T10:20:06.874Z  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1476 ms
+2025-03-06T10:20:07.094Z  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06T10:20:07.143Z  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2025-03-06T10:20:07.378Z  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-06T10:20:07.530Z  INFO 1 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@159e366
+2025-03-06T10:20:07.532Z  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-06T10:20:07.558Z  INFO 1 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-03-06T10:20:08.220Z  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-06T10:20:08.226Z  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06T10:20:08.581Z  INFO 1 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [kafka:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 3
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-03-06T10:20:08.681Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.0
+2025-03-06T10:20:08.682Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 37edeed0777bacb3
+2025-03-06T10:20:08.683Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1741256408680
+2025-03-06T10:20:08.691Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:20:08.693Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:20:08.697Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:20:08.733Z  INFO 1 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-03-06T10:20:08.772Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.0
+2025-03-06T10:20:08.773Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 37edeed0777bacb3
+2025-03-06T10:20:08.773Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1741256408772
+2025-03-06T10:20:08.774Z  INFO 1 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Subscribed to topic(s): user-notifications
+2025-03-06T10:20:08.792Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:20:08.793Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:20:08.795Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:20:08.851Z  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-06T10:20:08.944Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:20:08.945Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:20:08.945Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:20:08.985Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:20:08.989Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:20:08.990Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:20:09.019Z  INFO 1 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-06T10:20:09.087Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:20:09.088Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:20:09.088Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:20:09.146Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:20:09.147Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:20:09.149Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:20:09.241Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:20:09.243Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:20:09.244Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:20:09.398Z  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@493ac8d3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13dbed9e, org.springframework.security.web.context.SecurityContextHolderFilter@21da4b5f, org.springframework.security.web.header.HeaderWriterFilter@1b2df3aa, org.springframework.security.web.csrf.CsrfFilter@6ee99964, org.springframework.security.web.authentication.logout.LogoutFilter@794366a5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5dc0ff7d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@625a9c5d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d1e0fbb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67531e3a, org.springframework.security.web.access.ExceptionTranslationFilter@12f49ca8, org.springframework.security.web.access.intercept.AuthorizationFilter@41da3aee]
+2025-03-06T10:20:09.443Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:20:09.444Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:20:09.444Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:20:09.607Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:20:09.607Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:20:09.608Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:20:09.762Z  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2025-03-06T10:20:09.774Z  INFO 1 --- [main] a.a.Application                          : Started Application in 5.207 seconds (process running for 5.598)
+2025-03-06T10:20:09.934Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:20:09.934Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:20:09.935Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:20:10.614Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: yQFAKrhqQjeL5t6rQIG5pg
+2025-03-06T10:20:10.896Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Error while fetching metadata with correlation id 2 : {user-notifications=LEADER_NOT_AVAILABLE}
+2025-03-06T10:20:10.896Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Cluster ID: yQFAKrhqQjeL5t6rQIG5pg
+2025-03-06T10:20:10.999Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Error while fetching metadata with correlation id 5 : {user-notifications=LEADER_NOT_AVAILABLE}
+2025-03-06T10:20:11.105Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Error while fetching metadata with correlation id 7 : {user-notifications=LEADER_NOT_AVAILABLE}
+2025-03-06T10:20:11.207Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Resetting the last seen epoch of partition user-notifications-0 to 0 since the associated topicId changed from null to rS7mGzrfSMO0eQEdxu0RRw
+2025-03-06T10:20:11.212Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+2025-03-06T10:20:11.214Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] (Re-)joining group
+2025-03-06T10:20:11.226Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Request joining group due to: need to re-join with the given member-id
+2025-03-06T10:20:11.227Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] (Re-)joining group
+2025-03-06T10:20:50.201Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T10:20:50.202Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T10:20:50.203Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-06T10:20:56.155Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Successfully joined group with generation Generation{generationId=17, memberId='consumer-notification-group-1-67b19de7-4c09-435a-9ae6-9db4a5edf76b', protocol='range'}
+2025-03-06T10:20:56.157Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Finished assignment for group at generation 17: {consumer-notification-group-1-67b19de7-4c09-435a-9ae6-9db4a5edf76b=Assignment(partitions=[user-notifications-0])}
+2025-03-06T10:20:56.176Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Successfully synced group in generation Generation{generationId=17, memberId='consumer-notification-group-1-67b19de7-4c09-435a-9ae6-9db4a5edf76b', protocol='range'}
+2025-03-06T10:20:56.177Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Notifying assignor about the new Assignment(partitions=[user-notifications-0])
+2025-03-06T10:20:56.179Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Adding newly assigned partitions: user-notifications-0
+2025-03-06T10:20:56.188Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Setting offset for partition user-notifications-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1 rack: null)], epoch=0}}
+2025-03-06T10:26:59.206Z  INFO 1 --- [SpringApplicationShutdownHook] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2025-03-06T10:26:59.209Z  INFO 1 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-03-06T10:26:59.210Z  INFO 1 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-03-06T10:26:59.210Z  INFO 1 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-03-06T10:26:59.211Z  INFO 1 --- [SpringApplicationShutdownHook] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for producer-1 unregistered
+2025-03-06T10:26:59.211Z  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06T10:26:59.213Z  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-06T10:26:59.215Z  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-06T10:27:42.485Z  INFO 1 --- [main] a.a.Application                          : Starting Application v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by appuser in /app)
+2025-03-06T10:27:42.489Z  INFO 1 --- [main] a.a.Application                          : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T10:27:43.097Z  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06T10:27:43.138Z  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
+2025-03-06T10:27:43.734Z  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2025-03-06T10:27:43.751Z  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T10:27:43.752Z  INFO 1 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-03-06T10:27:43.827Z  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T10:27:43.829Z  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1293 ms
+2025-03-06T10:27:44.033Z  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06T10:27:44.083Z  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2025-03-06T10:27:44.332Z  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-06T10:27:44.510Z  INFO 1 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5b43e173
+2025-03-06T10:27:44.513Z  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-06T10:27:44.539Z  INFO 1 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-03-06T10:27:45.158Z  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-06T10:27:45.163Z  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06T10:27:45.530Z  INFO 1 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [kafka:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 3
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-03-06T10:27:45.618Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.0
+2025-03-06T10:27:45.619Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 37edeed0777bacb3
+2025-03-06T10:27:45.620Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1741256865617
+2025-03-06T10:27:45.626Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:27:45.627Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:27:45.628Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:27:45.727Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:27:45.728Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:27:45.728Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:27:45.878Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:27:45.878Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:27:45.878Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:27:46.050Z  INFO 1 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-03-06T10:27:46.088Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.0
+2025-03-06T10:27:46.089Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 37edeed0777bacb3
+2025-03-06T10:27:46.089Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1741256866088
+2025-03-06T10:27:46.090Z  INFO 1 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Subscribed to topic(s): user-notifications
+2025-03-06T10:27:46.130Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:27:46.133Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:27:46.134Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:27:46.162Z  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-06T10:27:46.277Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:27:46.279Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:27:46.280Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:27:46.319Z  INFO 1 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-06T10:27:46.378Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:27:46.379Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:27:46.380Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:27:46.488Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:27:46.489Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:27:46.490Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:27:46.532Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:27:46.533Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:27:46.533Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:27:46.711Z  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5ba03c82, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60df7989, org.springframework.security.web.context.SecurityContextHolderFilter@20ab76ee, org.springframework.security.web.header.HeaderWriterFilter@7e62cfa3, org.springframework.security.web.csrf.CsrfFilter@1727e03a, org.springframework.security.web.authentication.logout.LogoutFilter@75023c53, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@22d322f5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2703d91, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5be052ca, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ab1127c, org.springframework.security.web.access.ExceptionTranslationFilter@23cbbd07, org.springframework.security.web.access.intercept.AuthorizationFilter@630bf683]
+2025-03-06T10:27:46.735Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:27:46.736Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:27:46.736Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:27:47.272Z  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2025-03-06T10:27:47.281Z  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+2025-03-06T10:27:47.286Z  INFO 1 --- [main] o.s.a.r.l.SimpleMessageListenerContainer : Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused
+2025-03-06T10:27:47.294Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+2025-03-06T10:27:47.304Z  INFO 1 --- [main] a.a.Application                          : Started Application in 5.187 seconds (process running for 5.524)
+2025-03-06T10:27:47.328Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: WNYtSnJySESeW-9t14Infg
+2025-03-06T10:27:47.359Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Error while fetching metadata with correlation id 3 : {user-notifications=LEADER_NOT_AVAILABLE}
+2025-03-06T10:27:47.360Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Cluster ID: WNYtSnJySESeW-9t14Infg
+2025-03-06T10:27:47.482Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Error while fetching metadata with correlation id 5 : {user-notifications=LEADER_NOT_AVAILABLE}
+2025-03-06T10:27:47.587Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Resetting the last seen epoch of partition user-notifications-0 to 0 since the associated topicId changed from null to NmomzX3dR2CSGn3ndm2MDw
+2025-03-06T10:27:49.522Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+2025-03-06T10:27:49.524Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] (Re-)joining group
+2025-03-06T10:27:49.538Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Request joining group due to: need to re-join with the given member-id
+2025-03-06T10:27:49.539Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] (Re-)joining group
+2025-03-06T10:27:52.298Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+2025-03-06T10:27:52.302Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@7fedb795: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-03-06T10:27:52.303Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+2025-03-06T10:27:52.338Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#75e27856:2/SimpleConnection@7c7bfcc1 [delegate=amqp://guest@172.18.0.4:5672/, localPort=60904]
+2025-03-06T10:27:52.344Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (testQueue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2025-03-06T10:27:52.357Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Failed to declare queue: peopleQueue
+2025-03-06T10:27:52.358Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Queue declaration failed; retries left=3
+
+org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[peopleQueue]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:760) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:637) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:624) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1385) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1230) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1137) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at jdk.proxy2/jdk.proxy2.$Proxy135.queueDeclarePassive(Unknown Source) ~[na:na]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:738) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 1 common frames omitted
+
+2025-03-06T10:27:52.548Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-notification-group-1-5114be3c-0f93-497a-8536-7415e2460dcb', protocol='range'}
+2025-03-06T10:27:52.550Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Finished assignment for group at generation 1: {consumer-notification-group-1-5114be3c-0f93-497a-8536-7415e2460dcb=Assignment(partitions=[user-notifications-0])}
+2025-03-06T10:27:52.573Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-notification-group-1-5114be3c-0f93-497a-8536-7415e2460dcb', protocol='range'}
+2025-03-06T10:27:52.574Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Notifying assignor about the new Assignment(partitions=[user-notifications-0])
+2025-03-06T10:27:52.575Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Adding newly assigned partitions: user-notifications-0
+2025-03-06T10:27:52.583Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Found no committed offset for partition user-notifications-0
+2025-03-06T10:27:52.591Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Resetting offset for partition user-notifications-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1 rack: null)], epoch=0}}.
+2025-03-06T10:27:57.362Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Failed to declare queue: peopleQueue
+2025-03-06T10:27:57.363Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Queue declaration failed; retries left=2
+
+org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[peopleQueue]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:760) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:637) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:624) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1385) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1230) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1137) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at jdk.proxy2/jdk.proxy2.$Proxy135.queueDeclarePassive(Unknown Source) ~[na:na]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:738) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 1 common frames omitted
+
+2025-03-06T10:28:01.555Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T10:28:01.556Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T10:28:01.557Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-06T10:28:02.365Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Failed to declare queue: peopleQueue
+2025-03-06T10:28:02.366Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Queue declaration failed; retries left=1
+
+org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[peopleQueue]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:760) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:637) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:624) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1385) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1230) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1137) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at jdk.proxy2/jdk.proxy2.$Proxy135.queueDeclarePassive(Unknown Source) ~[na:na]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:738) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 1 common frames omitted
+
+2025-03-06T10:28:05.211Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-6] a.a.Controllers.PeopleController         : Открыта страница все люди
+2025-03-06T10:28:07.110Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-7] a.a.Controllers.PeopleController         : Открыта страница для создания нового человека
+2025-03-06T10:28:07.369Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Failed to declare queue: peopleQueue
+2025-03-06T10:28:07.370Z ERROR 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Consumer threw missing queues exception, fatal=true
+
+org.springframework.amqp.rabbit.listener.QueuesNotAvailableException: Cannot prepare queue for listener. Either the queue doesn't exist or the broker will not allow us to use it.
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.handleDeclarationException(BlockingQueueConsumer.java:710) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:644) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:624) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1385) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1230) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[peopleQueue]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:760) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:637) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	... 4 common frames omitted
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1137) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at jdk.proxy2/jdk.proxy2.$Proxy135.queueDeclarePassive(Unknown Source) ~[na:na]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:738) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 1 common frames omitted
+
+2025-03-06T10:28:07.372Z ERROR 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Stopping container from aborted consumer
+2025-03-06T10:28:07.373Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-06T10:28:07.374Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-06T10:28:14.441Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-10] a.a.rabbitMQ.RabbitMQProducer            : Отправлено в RabbitMQ: Добавлен новый человек: ddsfhgdgh as wegh (1990)
+2025-03-06T10:28:14.441Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-10] a.a.Controllers.PeopleController         : Добавлен новый человек: Добавлен новый человек: ddsfhgdgh as wegh (1990)
+2025-03-06T10:28:14.455Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-1] a.a.Controllers.PeopleController         : Открыта страница все люди
+2025-03-06T10:35:51.168Z  INFO 1 --- [SpringApplicationShutdownHook] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2025-03-06T10:35:51.171Z  INFO 1 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-03-06T10:35:51.171Z  INFO 1 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-03-06T10:35:51.172Z  INFO 1 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-03-06T10:35:51.172Z  INFO 1 --- [SpringApplicationShutdownHook] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for producer-1 unregistered
+2025-03-06T10:35:51.173Z  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06T10:35:51.174Z  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-06T10:35:51.176Z  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-06T10:36:08.156Z  INFO 1 --- [main] a.a.Application                          : Starting Application v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by appuser in /app)
+2025-03-06T10:36:08.158Z  INFO 1 --- [main] a.a.Application                          : No active profile set, falling back to 1 default profile: "default"
+2025-03-06T10:36:08.840Z  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06T10:36:08.898Z  INFO 1 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2025-03-06T10:36:09.564Z  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2025-03-06T10:36:09.582Z  INFO 1 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06T10:36:09.583Z  INFO 1 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-03-06T10:36:09.686Z  INFO 1 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06T10:36:09.688Z  INFO 1 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1489 ms
+2025-03-06T10:36:09.970Z  INFO 1 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06T10:36:10.051Z  INFO 1 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2025-03-06T10:36:10.403Z  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-06T10:36:10.639Z  INFO 1 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5fa47fea
+2025-03-06T10:36:10.646Z  INFO 1 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-06T10:36:10.676Z  INFO 1 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-03-06T10:36:11.412Z  INFO 1 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-06T10:36:11.418Z  INFO 1 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06T10:36:11.843Z  INFO 1 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [kafka:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 3
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-03-06T10:36:11.989Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.0
+2025-03-06T10:36:11.989Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 37edeed0777bacb3
+2025-03-06T10:36:11.990Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1741257371987
+2025-03-06T10:36:12.004Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:36:12.013Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:36:12.014Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:36:12.105Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:36:12.106Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:36:12.106Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:36:12.256Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:36:12.257Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:36:12.258Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:36:12.314Z  INFO 1 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-03-06T10:36:12.359Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.0
+2025-03-06T10:36:12.360Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 37edeed0777bacb3
+2025-03-06T10:36:12.360Z  INFO 1 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1741257372359
+2025-03-06T10:36:12.361Z  INFO 1 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Subscribed to topic(s): user-notifications
+2025-03-06T10:36:12.433Z  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-06T10:36:12.509Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:36:12.510Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:36:12.510Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:36:12.607Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:36:12.609Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:36:12.609Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:36:12.620Z  INFO 1 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-06T10:36:12.708Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:36:12.709Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:36:12.710Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:36:12.809Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:36:12.812Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:36:12.814Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:36:12.913Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-03-06T10:36:12.914Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:36:12.915Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:36:13.012Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:36:13.013Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:36:13.014Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:36:13.030Z  INFO 1 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@640cc04b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@630bf683, org.springframework.security.web.context.SecurityContextHolderFilter@23cbbd07, org.springframework.security.web.header.HeaderWriterFilter@45545e7a, org.springframework.security.web.csrf.CsrfFilter@65f40689, org.springframework.security.web.authentication.logout.LogoutFilter@4d157493, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3a17b2e3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e62cfa3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46e190ed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22d322f5, org.springframework.security.web.access.ExceptionTranslationFilter@3e05586b, org.springframework.security.web.access.intercept.AuthorizationFilter@dab1f89]
+2025-03-06T10:36:13.367Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T10:36:13.369Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node -1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T10:36:13.369Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Bootstrap broker kafka:9092 (id: -1 rack: null) disconnected
+2025-03-06T10:36:13.511Z  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2025-03-06T10:36:13.524Z  INFO 1 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+2025-03-06T10:36:13.530Z  INFO 1 --- [main] o.s.a.r.l.SimpleMessageListenerContainer : Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused
+2025-03-06T10:36:13.541Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+2025-03-06T10:36:13.560Z  INFO 1 --- [main] a.a.Application                          : Started Application in 5.81 seconds (process running for 6.207)
+2025-03-06T10:36:14.015Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: gTJBLsdUQUK9eBHLlvd4VQ
+2025-03-06T10:36:14.263Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Error while fetching metadata with correlation id 2 : {user-notifications=LEADER_NOT_AVAILABLE}
+2025-03-06T10:36:14.264Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Cluster ID: gTJBLsdUQUK9eBHLlvd4VQ
+2025-03-06T10:36:14.383Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Error while fetching metadata with correlation id 5 : {user-notifications=LEADER_NOT_AVAILABLE}
+2025-03-06T10:36:14.485Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Resetting the last seen epoch of partition user-notifications-0 to 0 since the associated topicId changed from null to sEBneDnzRpy5byFxcHed-Q
+2025-03-06T10:36:16.317Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+2025-03-06T10:36:16.319Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] (Re-)joining group
+2025-03-06T10:36:16.334Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Request joining group due to: need to re-join with the given member-id
+2025-03-06T10:36:16.335Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] (Re-)joining group
+2025-03-06T10:36:18.549Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+2025-03-06T10:36:18.552Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@65514add: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-03-06T10:36:18.554Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+2025-03-06T10:36:18.581Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#2806d6da:2/SimpleConnection@1a3b70ed [delegate=amqp://guest@172.18.0.4:5672/, localPort=41126]
+2025-03-06T10:36:18.590Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (testQueue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2025-03-06T10:36:18.607Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Failed to declare queue: peopleQueue
+2025-03-06T10:36:18.608Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Queue declaration failed; retries left=3
+
+org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[peopleQueue]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:760) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:637) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:624) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1385) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1230) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1137) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at jdk.proxy2/jdk.proxy2.$Proxy135.queueDeclarePassive(Unknown Source) ~[na:na]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:738) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 1 common frames omitted
+
+2025-03-06T10:36:18.800Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06T10:36:18.801Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-06T10:36:18.802Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-06T10:36:19.349Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-notification-group-1-c54cb423-f5e3-48f8-a230-e4130b8c54f9', protocol='range'}
+2025-03-06T10:36:19.351Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Finished assignment for group at generation 1: {consumer-notification-group-1-c54cb423-f5e3-48f8-a230-e4130b8c54f9=Assignment(partitions=[user-notifications-0])}
+2025-03-06T10:36:19.378Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-notification-group-1-c54cb423-f5e3-48f8-a230-e4130b8c54f9', protocol='range'}
+2025-03-06T10:36:19.379Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Notifying assignor about the new Assignment(partitions=[user-notifications-0])
+2025-03-06T10:36:19.381Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Adding newly assigned partitions: user-notifications-0
+2025-03-06T10:36:19.390Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Found no committed offset for partition user-notifications-0
+2025-03-06T10:36:19.399Z  INFO 1 --- [Thread-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Resetting offset for partition user-notifications-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1 rack: null)], epoch=0}}.
+2025-03-06T10:36:23.008Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-5] a.a.Controllers.PeopleController         : Открыта страница все люди
+2025-03-06T10:36:23.612Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Failed to declare queue: peopleQueue
+2025-03-06T10:36:23.613Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Queue declaration failed; retries left=2
+
+org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[peopleQueue]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:760) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:637) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:624) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1385) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1230) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1137) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at jdk.proxy2/jdk.proxy2.$Proxy135.queueDeclarePassive(Unknown Source) ~[na:na]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:738) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 1 common frames omitted
+
+2025-03-06T10:36:24.346Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-6] a.a.Controllers.PeopleController         : Открыта страница для создания нового человека
+2025-03-06T10:36:28.616Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Failed to declare queue: peopleQueue
+2025-03-06T10:36:28.616Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Queue declaration failed; retries left=1
+
+org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[peopleQueue]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:760) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:637) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:624) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1385) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1230) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1137) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at jdk.proxy2/jdk.proxy2.$Proxy135.queueDeclarePassive(Unknown Source) ~[na:na]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:738) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 1 common frames omitted
+
+2025-03-06T10:36:33.619Z  WARN 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.listener.BlockingQueueConsumer   : Failed to declare queue: peopleQueue
+2025-03-06T10:36:33.620Z ERROR 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Consumer threw missing queues exception, fatal=true
+
+org.springframework.amqp.rabbit.listener.QueuesNotAvailableException: Cannot prepare queue for listener. Either the queue doesn't exist or the broker will not allow us to use it.
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.handleDeclarationException(BlockingQueueConsumer.java:710) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:644) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.start(BlockingQueueConsumer.java:624) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1385) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1230) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$DeclarationException: Failed to declare queue(s):[peopleQueue]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:760) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.passiveDeclarations(BlockingQueueConsumer.java:637) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	... 4 common frames omitted
+Caused by: java.io.IOException: null
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:129) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:125) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:147) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:1012) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.queueDeclarePassive(ChannelN.java:46) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler.invoke(CachingConnectionFactory.java:1137) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	at jdk.proxy2/jdk.proxy2.$Proxy135.queueDeclarePassive(Unknown Source) ~[na:na]
+	at org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.attemptPassiveDeclarations(BlockingQueueConsumer.java:738) ~[spring-rabbit-3.0.2.jar!/:3.0.2]
+	... 5 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:66) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:36) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:502) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:293) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:141) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 14 common frames omitted
+Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no queue 'peopleQueue' in vhost '/', class-id=50, method-id=10)
+	at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:517) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:341) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:182) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:114) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:739) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:47) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:666) ~[amqp-client-5.16.0.jar!/:5.16.0]
+	... 1 common frames omitted
+
+2025-03-06T10:36:33.622Z ERROR 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Stopping container from aborted consumer
+2025-03-06T10:36:33.623Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-06T10:36:33.623Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-06T10:36:41.627Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-9] a.a.rabbitMQ.RabbitMQProducer            : Отправлено в RabbitMQ: Добавлен новый человек: Пустоветов Николай Александрович (1990)
+2025-03-06T10:36:41.628Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-9] a.a.Controllers.PeopleController         : Добавлен новый человек: Добавлен новый человек: Пустоветов Николай Александрович (1990)
+2025-03-06T10:36:41.643Z  INFO 1 --- [http-nio-0.0.0.0-8081-exec-10] a.a.Controllers.PeopleController         : Открыта страница все люди
