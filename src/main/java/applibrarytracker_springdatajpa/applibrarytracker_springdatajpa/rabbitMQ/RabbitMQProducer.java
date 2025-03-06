@@ -1,6 +1,7 @@
 package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.rabbitMQ;
 
 
+import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Config.RabbitMQConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ public class RabbitMQProducer {
     }
 
     public void sendMessage(String message) {
-        rabbitTemplate.convertAndSend("peopleQueue", message);
+        rabbitTemplate.convertAndSend(RabbitMQConfig.QUEUE_NAME, message);
         log.info("Отправлено в RabbitMQ: {}", message); // Логируем отправленное сообщение
     }
 }

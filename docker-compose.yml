@@ -15,7 +15,6 @@ services:
       SPRING_RABBITMQ_PORT: 5672
       SPRING_MAIL_USERNAME: ${SPRING_MAIL_USERNAME}
       SPRING_MAIL_PASSWORD: ${SPRING_MAIL_PASSWORD}
-      # Параметры логирования
       LOGGING_FILE_NAME: /app/logs/app.log
       LOGGING_LEVEL_ROOT: INFO
       LOGGING_PATTERN_CONSOLE: "%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"
@@ -30,7 +29,11 @@ services:
     user: appuser
     working_dir: /app
     command: java -jar app.jar
-
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   db:
     image: postgres:15
     container_name: postgres_db_library
@@ -51,7 +54,7 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
     healthcheck:
-      test: ["CMD", "nc", "-z", "zookeeper", "2181"]
+      test: ["CMD", "nc", "-z", "localhost", "2181"]
       interval: 10s
       retries: 5
       start_period: 10s
@@ -68,6 +71,8 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_ADVERTISED_HOST_NAME: kafka
     ports:
       - "9092:9092"
     healthcheck:
@@ -82,11 +87,14 @@ services:
     container_name: rabbitmq
     restart: always
     environment:
-      RABBITMQ_DEFAULT_USER: guest
-      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+      RABBITMQ_DEFAULT_VHOST: /
+      RABBITMQ_MANAGEMENT_PLUGIN: enabled
+      RABBITMQ_PERMIT_DEPRECATED_FEATURES: "true"
     ports:
-      - "5672:5672"  # для взаимодействия с брокером
-      - "15672:15672" # для веб-интерфейса
+      - "5672:5672"
+      - "15672:15672"
     healthcheck:
       test: ["CMD", "rabbitmqctl", "status"]
       interval: 10s
@@ -97,4 +105,3 @@ services:
 volumes:
   postgres_data:
   logs:
-
