@@ -1,20 +1,20 @@
 package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.rabbitMQ;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+@Slf4j
 @Service
 public class RabbitMQConsumer {
 
-    private static final Logger logger = LoggerFactory.getLogger(RabbitMQConsumer.class);
+
     private String lastMessage = null;
 
     @RabbitListener(queues = "peopleQueue")
     public void receiveMessage(String message) {
-        logger.info("Получено из RabbitMQ: {}", message); // Логируем полученное сообщение
+        log.info("Получено из RabbitMQ: {}", message); // Логируем полученное сообщение
         lastMessage = message;
     }
 
