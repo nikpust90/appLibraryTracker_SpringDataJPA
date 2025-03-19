@@ -2,17 +2,15 @@ package applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.service;
 
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model.Person;
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.repositories.PersonRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class PersonService {
 
     private final PersonRepository personRepository;
-
-    public PersonService(PersonRepository personRepository) {
-        this.personRepository = personRepository;
-    }
 
     public List<Person> getAllPersons() {
         return personRepository.findAll();
