@@ -2704,3 +2704,29 @@ Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol 
 2025-03-06T11:44:48.066Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Resetting the last seen epoch of partition user-notifications-0 to 0 since the associated topicId changed from null to BJNHLyLJQsCgWn50rcaGLw
 2025-03-06T11:51:47.059Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
 2025-03-06T11:51:47.124Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node -1 disconnected.
+2025-03-06T21:24:27.659Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-03-06T21:24:27.672Z  INFO 1 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-03-06T21:24:27.699Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 1 disconnected.
+2025-03-06T21:24:27.699Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node 1 disconnected.
+2025-03-06T21:24:27.701Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Cancelled in-flight FETCH request with correlation id 88344 due to node 1 being disconnected (elapsed time since creation: 363ms, elapsed time since send: 363ms, request timeout: 30000ms)
+2025-03-06T21:24:27.702Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node 2147483646 disconnected.
+2025-03-06T21:24:27.706Z  INFO 1 --- [kafka-coordinator-heartbeat-thread | notification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable.isDisconnected: true. Rediscovery will be attempted.
+2025-03-06T21:24:27.708Z  INFO 1 --- [Thread-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Error sending fetch request (sessionId=302241307, epoch=69625) to node 1:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-03-06T21:24:27.765Z  INFO 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 1 disconnected.
+2025-03-06T21:24:27.765Z  WARN 1 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T21:24:27.801Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node 1 disconnected.
+2025-03-06T21:24:27.802Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node 1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T21:24:27.808Z  INFO 1 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2025-03-06T21:24:27.837Z  INFO 1 --- [SpringApplicationShutdownHook] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2025-03-06T21:24:27.864Z  INFO 1 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-03-06T21:24:27.864Z  INFO 1 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-03-06T21:24:27.865Z  INFO 1 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-03-06T21:24:27.872Z  INFO 1 --- [SpringApplicationShutdownHook] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for producer-1 unregistered
+2025-03-06T21:24:27.879Z  INFO 1 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06T21:24:27.902Z  INFO 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Node 1 disconnected.
+2025-03-06T21:24:27.902Z  WARN 1 --- [Thread-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Connection to node 1 (kafka/172.18.0.5:9092) could not be established. Broker may not be available.
+2025-03-06T21:24:27.976Z  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-06T21:24:28.054Z  INFO 1 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

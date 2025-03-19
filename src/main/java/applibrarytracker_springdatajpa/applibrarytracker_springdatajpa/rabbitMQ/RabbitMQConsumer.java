@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class RabbitMQConsumer {
 
-
     private String lastMessage = null;
 
     @RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)

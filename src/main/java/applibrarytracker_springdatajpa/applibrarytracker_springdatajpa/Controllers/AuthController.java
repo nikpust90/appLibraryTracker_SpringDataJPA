@@ -18,7 +18,6 @@ public class AuthController {
     private final PersonValidator personValidator;
     private final PeopleService peopleService;
 
-
     @GetMapping("/login")
     public String login() {
         return "auth/login";
@@ -29,7 +28,6 @@ public class AuthController {
         model.addAttribute("personSecurity", new PersonSecurity());
         return "auth/registration";
     }
-
 
     @PostMapping("/registration")
     public String register(@ModelAttribute("personSecurity") PersonSecurity personSecurity,
@@ -45,7 +43,6 @@ public class AuthController {
 
         return "redirect:/auth/login";
     }
-
 
     @GetMapping("/admin")
     public String getAdminPage(Model model) {

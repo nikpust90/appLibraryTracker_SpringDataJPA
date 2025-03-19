@@ -23,7 +23,6 @@ public class BooksController {
     private final PersonService personService;
     private final KafkaProducerService kafkaProducerService;
 
-
     // Получить список книг
     @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     @GetMapping

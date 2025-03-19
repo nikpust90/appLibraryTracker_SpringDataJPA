@@ -28,9 +28,6 @@ import java.util.List;
 @RequestMapping(value = "/people", produces = "text/html; charset=UTF-8")
 @RequiredArgsConstructor
 public class PeopleController {
-
-
-    //Logger log = LoggerFactory.getLogger(PeopleController.class);
     private final PersonService personService;
     private final RabbitMQProducer rabbitMQProducer;
     private final RabbitMQConsumer rabbitMQConsumer;

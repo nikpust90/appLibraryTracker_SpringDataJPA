@@ -5,6 +5,7 @@ import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.Model.Per
 import applibrarytracker_springdatajpa.applibrarytracker_springdatajpa.repositories.BookRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookService {
@@ -32,16 +33,18 @@ public class BookService {
     }
 
     public void assignBookToPerson(Long bookId, Person person) {
-        Book book = bookRepository.findById(bookId).orElse(null);
-        if (book != null) {
+        Optional<Book> bookOptional = bookRepository.findById(bookId);
+        if (bookOptional.isPresent()) {
+            Book book = bookOptional.get();
             book.setOwner(person);
             bookRepository.save(book);
         }
     }
 
     public void removeBookFromPerson(Long bookId) {
-        Book book = bookRepository.findById(bookId).orElse(null);
-        if (book != null) {
+        Optional<Book> bookOptional = bookRepository.findById(bookId);
+        if (bookOptional.isPresent()) {
+            Book book = bookOptional.get();
             book.setOwner(null);
             bookRepository.save(book);
         }

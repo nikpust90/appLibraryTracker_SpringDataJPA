@@ -17,7 +17,6 @@ import lombok.Setter;
 public class PersonSecurity {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
